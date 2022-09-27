@@ -5,12 +5,16 @@ export default function Home() {
   const [selectedItem, setItemForSquare] = useState();
   const [itemForSquare, setSquare] = useState([]);
 
-  const colors = ['#06283D', '#5C2E7E', '#674747', '#F96666', 'F96666'];
-
+  const colors = ['#d7d7d7', '#5C2E7E', '#b74747', '#F96866', 'b96966'];
+  const randomColors = colors[Math.floor(Math.random() * colors.length)];
+  const getRandomItem = (arr) => {
+    const randomIndex = Math.floor(Math.random() * arr.length + 1);
+    return arr[randomIndex];
+  };
   const [coloredCircles, setColoredCircles] = useState(colors);
 
   const ColorWidget = coloredCircles.map((item) => {
-    return <Circle color={item} key={item} />;
+    return <Circle color={getRandomItem(colors)} key={item} />;
   });
   const updateSquare = () => {
     if (selectedItem < colors.length) {
@@ -24,7 +28,7 @@ export default function Home() {
         {/* <Square color={colors[selectedItem]} /> */}
         <Square items={itemForSquare} colors={colors} />
       </div>
-      <div>{ColorWidget}</div>
+      <div className="colorwidget">{ColorWidget}</div>
       <div>
         <input
           type="text"
