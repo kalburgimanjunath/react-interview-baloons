@@ -5,7 +5,7 @@
 }
 .square {
   display: flex;
-  border: 1px solid #d6d6d6;
+  border: 2px solid #d6d6d6;
   min-width: 200px;
   min-height: 200px;
   flex-wrap: wrap;

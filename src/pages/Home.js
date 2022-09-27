@@ -6,6 +6,7 @@ export default function Home() {
   const [itemForSquare, setSquare] = useState([]);
 
   const colors = ['#d7d7d7', '#5C2E7E', '#b74747', '#F96866', 'b96966'];
+
   const randomColors = colors[Math.floor(Math.random() * colors.length)];
   const getRandomItem = (arr) => {
     const randomIndex = Math.floor(Math.random() * arr.length + 1);
