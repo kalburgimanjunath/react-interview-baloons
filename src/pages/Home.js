@@ -14,8 +14,8 @@ export default function Home() {
   };
   const [coloredCircles, setColoredCircles] = useState(colors);
 
-  const ColorWidget = coloredCircles.map((item) => {
-    return <Circle color={getRandomItem(colors)} key={item} />;
+  const ColorWidget = coloredCircles.map((item, index) => {
+    return <Circle color={getRandomItem(colors)} key={item} value={index} />;
   });
   const updateSquare = () => {
     if (selectedItem < colors.length) {
@@ -32,8 +32,9 @@ export default function Home() {
       <div className="colorwidget">{ColorWidget}</div>
       <div>
         <input
-          type="text"
+          type="number"
           name="inputText"
+          placeholder="Enter boloon to add into square"
           onChange={(e) => setItemForSquare(e.target.value)}
         />
         <br />

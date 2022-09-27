@@ -1,4 +1,8 @@
 import React from 'react';
-export default function Circle({ color }) {
-  return <div className="circle" style={{ backgroundColor: `${color}` }}></div>;
+export default function Circle({ color, value }) {
+  return (
+    <div className="circle" style={{ backgroundColor: `${color}` }}>
+      {value}
+    </div>
+  );
 }
